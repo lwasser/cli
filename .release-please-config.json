@@ -1,0 +1,18 @@
+{
+  "packages": {
+    ".": {
+      "changelog-sections": [
+        {"type": "feat", "section": "Features"},
+        {"type": "fix", "section": "Bug Fixes"},
+        {"type": "chore", "section": "Infrastructure"},
+        {"type": "ci", "section": "Infrastructure"},
+        {"type": "docs", "section": "Documentation"},
+        {"type": "refactor", "section": "Refactoring"},
+        {"type": "test", "section": "Infrastructure"},
+        {"type": "build", "section": "Infrastructure"},
+        {"type": "perf", "section": "Performance Improvements"},
+        {"type": "revert", "section": "Reverted"}
+      ]
+    }
+  }
+}
