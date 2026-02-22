@@ -2,6 +2,7 @@ on:
   push:
     branches:
       - main
+      - release-please-types
 
 permissions:
   contents: write
@@ -19,4 +20,4 @@ jobs:
           token: ${{ secrets.CLI_RELEASE_PLEASE_TOKEN }}
           # this is a built-in strategy in release-please, see "Action Inputs"
           # for more options
-          release-type: simple
+          config-file: release-please-config.json
