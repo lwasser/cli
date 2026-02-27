@@ -1,4 +1,4 @@
-const util = require('../util')
+import * as util from '../util/index.js'
 
 const linkTemplate = util.template(
   '<a href="<%= url %>" title="<%= description %>"><%= symbol %></a>',
@@ -9,11 +9,7 @@ function getType(options, contribution) {
   return types[contribution.type || contribution]
 }
 
-module.exports = function formatContribution(
-  options,
-  contributor,
-  contribution,
-) {
+export function formatContributionType(options, contributor, contribution) {
   const type = getType(options, contribution)
 
   if (!type) {

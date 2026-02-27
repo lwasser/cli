@@ -1,6 +1,6 @@
 import {test, expect, beforeEach} from 'vitest'
 import nock from 'nock'
-import repo from '../index.js'
+import * as repo from '../index.js'
 
 beforeEach(() => {
   nock.cleanAll()

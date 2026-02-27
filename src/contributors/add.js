@@ -65,12 +65,7 @@ function addNewContributor(options, username, contributions, infoFetcher) {
   )
 }
 
-module.exports = function addContributor(
-  options,
-  username,
-  contributions,
-  infoFetcher,
-) {
+export function add(options, username, contributions, infoFetcher) {
   // case insensitive find
   const exists = options.contributors.find(contributor => {
     return (

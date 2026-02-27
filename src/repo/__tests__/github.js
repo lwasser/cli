@@ -1,6 +1,6 @@
 import {test, expect, beforeAll} from 'vitest'
 import nock from 'nock'
-import githubAPI from '../github.js'
+import * as githubAPI from '../github.js'
 
 import allContributorsCliResponse from './github/all-contributors.response.json'
 import allContributorsCliTransformed from './github/all-contributors.transformed.json'

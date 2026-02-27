@@ -1,5 +1,5 @@
 import {test, expect} from 'vitest'
-import addContributorWithDetails from '../addWithDetails.js'
+import {addContributorWithDetails} from '../addWithDetails.js'
 import fixtures from './fixtures/index.js'
 
 test('add new contributor without going to the network', async () => {

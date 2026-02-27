@@ -1,8 +1,8 @@
-const path = require('path')
-const spawn = require('child_process').spawn
-const pify = require('pify')
-const util = require('../util')
-const conventions = require('../init/commit-conventions')
+import path from 'path'
+import {spawn} from 'child_process'
+import pify from 'pify'
+import {conventions} from '../init/commit-conventions.js'
+import * as util from '../util/index.js'
 
 const commitTemplate =
   '<%= prefix %> <%= (newContributor ? "Add" : "Update") %> @<%= username %> as a contributor'
@@ -32,7 +32,7 @@ function parse(originUrl) {
   }
 }
 
-function getRepoInfo() {
+export function getRepoInfo() {
   return getRemoteOriginData().then(parse)
 }
 
@@ -52,7 +52,7 @@ const spawnGitCommand = pify((args, cb) => {
   })
 })
 
-async function commit(options, data) {
+export async function commit(options, data) {
   const files = options.files.concat(options.config)
   const absolutePathFiles = files.map(file => {
     return path.resolve(process.cwd(), file)
@@ -71,9 +71,4 @@ async function commit(options, data) {
     }
     return spawnGitCommand(['commit', '-m', commitMessage])
   })
-}
-
-module.exports = {
-  commit,
-  getRepoInfo,
 }

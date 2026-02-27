@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   ignore: [
     '**/__snapshots__/**',
     '**/__tests__/**',
@@ -10,7 +10,7 @@ module.exports = {
       '@babel/preset-env',
       {
         targets: {node: '22.22.0'},
-        modules: 'commonjs',
+        modules: false,
       },
     ],
   ],
