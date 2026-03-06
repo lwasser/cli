@@ -14,7 +14,7 @@ function contributionChoices(options) {
   }))
 }
 
-function getQuestions(options, username, contributions) {
+export function getQuestions(options, username, contributions) {
   return [
     {
       type: 'input',
@@ -101,7 +101,7 @@ export function prompt(options, username, contributions) {
   const defaults = {
     username,
     contributions:
-      username === undefined && contributions === undefined
+      contributions === undefined
         ? []
         : getValidUserContributions(options, contributions),
   }
